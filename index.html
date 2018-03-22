@@ -516,7 +516,7 @@ srun singularity exec ubuntu.img date</code></pre></figure>
                     <p>Here is a simple example procedure that demonstrates how to use GROMACS 2016 on Perceval. In this example, we’ll start with a downloaded PDB file and proceed through importing that file into GROMACS, solvating the protein, a quick energy minimization, and then an MD equilibration. This example is not intended to teach anyone how to use GROMACS. Instead, it is intended to assist new GROMACS users in learning to use GROMACS on Perceval.</p>
                     <p>(1) Download a PDB file.</p>
                     <figure class=highlight><pre><code class=language-html data-lang=html>wget https://files.rcsb.org/view/5EWT.pdb</code></pre></figure>
-                    <p>(2) Load the GROMACS softare module.</p>
+                    <p>(2) Load the GROMACS softare module plus any needed prerequisites.</p>
                     <figure class=highlight><pre><code class=language-html data-lang=html>module purge
                     module load intel/17.0.1 mvapich2/2.2 gromacs/2016.1</code></pre></figure>
                     <p>(3) Import the PDB into GROMACS, while defining the force field and water model to be used for this system.</p>
