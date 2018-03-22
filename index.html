@@ -245,6 +245,9 @@ Currently Loaded Modules:
 
 cd /scratch/[your NetID]
 
+$ module purge
+$ module load intel/16.0.3 fftw/3.3.1
+
 srun /scratch/[your NetID]/zipper/2.4.1/bin/zipper < my-input-file.in</code></pre></figure>
                     <p>Understanding this job script:</p>
                     <p>A job script contains the instructions for the SLURM workload manager (cluster job scheduler) to manage resource allocation, scheduling, and execution of your job.</p>
@@ -254,12 +257,11 @@ srun /scratch/[your NetID]/zipper/2.4.1/bin/zipper < my-input-file.in</code></pr
                     <p>This job will only use 1 CPU core and should not require much memory, so I have requested only 2 GB of RAM — it’s a good practice to request only about 2 GB per core for any job unless you know that your job will require more than that.</p>
                     <p>My job will be terminated when the run time limit has been reached, even if the program I’m running is not finished. It is not possible to extend this time after a job starts running.</p>
                     <p>Any output that would normally go to the command line will be redirected into the output file I have specified, and that file will be named using the compute node name and the job ID number.</p>
+                    <p>Be sure to confiure your environment as needed for running your job. This usually means loading any needed software modules.</p>
                     <br>
                     <p>Here’s how to run a serial batch job, loading modules and using the <strong>sbatch</strong> command:</p>
 
-                    <p>First, be sure to confiure your environment as needed for running your job. This usually means loading any needed modules.</p>
-                    <figure class=highlight><pre><code class=language-html data-lang=html>$ module purge
-$ module load intel/16.0.3 fftw/3.3.1
+                    <figure class=highlight><pre><code class=language-html data-lang=html>
 $ sbatch my-job-script.sh</code></pre></figure>
                     <p>The <strong>sbatch</strong> command reads the contents of your job script and forwards those instructions to the SLURM workload manager. Depending on the level of activity on the cluster, your job may wait in the job queue for mintues or hours before it begins running.</p>
                 </div>
