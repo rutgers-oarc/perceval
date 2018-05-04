@@ -485,7 +485,7 @@ $ sudo singularity import ubuntu.img ubuntu.tar</code></pre></figure>
 #SBATCH --output=slurm.%N.%j.out     # STDOUT output file
 
 module purge
-module load singularity/.2.4.5
+module load singularity/.2.5.1
 
 ## Where am I running?
 srun singularity exec ubuntu.img hostname
